@@ -1,0 +1,8 @@
+interface:
+  display_name: "Growth Ops"
+  short_description: "Business radar, operations, and assets"
+  brand_color: "#16A34A"
+  default_prompt: "Use $growth-ops to turn this business question into a sourced decision memo and next actions."
+
+policy:
+  allow_implicit_invocation: true
