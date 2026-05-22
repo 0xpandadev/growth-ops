@@ -13,6 +13,29 @@ Do not just summarize information.
 Understand the business situation, extract the signal, decide what matters, and make the next action obvious.
 ```
 
+## Visual Examples
+
+Growth Ops can produce **Growth Board** interfaces: compact knowledge UIs that make the path from signal to judgment visible. These examples are anonymized and rendered from the actual HTML examples in this repository.
+
+<a href="./examples/growth-board-en-signal.html">
+  <img src="./examples/screenshots/growth-board-en-signal.png" alt="Growth Board Signal Board example" width="100%">
+</a>
+
+<table>
+  <tr>
+    <td width="50%">
+      <a href="./examples/growth-board-ja-score.html">
+        <img src="./examples/screenshots/growth-board-ja-score.png" alt="Growth Board Japanese Score Board example" width="100%">
+      </a>
+    </td>
+    <td width="50%">
+      <a href="./examples/growth-board-zh-scenario.html">
+        <img src="./examples/screenshots/growth-board-zh-scenario.png" alt="Growth Board Chinese Scenario Board example" width="100%">
+      </a>
+    </td>
+  </tr>
+</table>
+
 ## What Makes It Different
 
 Most AI workflows stop too early. They summarize an article, list some trends, or produce a nice-looking framework. Growth Ops tries to go one layer deeper:
