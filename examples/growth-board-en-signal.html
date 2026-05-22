@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Growth Board Example - Signal Board</title>
+  <style>
+    :root {
+      --bg: #f4f5f1;
+      --panel: #ffffff;
+      --panel-2: #eef2ed;
+      --ink: #111614;
+      --muted: #66716c;
+      --line: #d8ddd4;
+      --accent: #176f51;
+      --blue: #245f8f;
+      --amber: #a46a18;
+      --red: #9c3434;
+      --soft-green: #e0f0e8;
+      --soft-blue: #e1edf6;
+      --soft-amber: #f2e6d1;
+      --shadow: 0 18px 50px rgba(17, 22, 20, 0.08);
+      --radius: 8px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.5;
+      letter-spacing: 0;
+    }
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid var(--line);
+      background: rgba(244, 245, 241, 0.92);
+      backdrop-filter: blur(16px);
+    }
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      width: min(1360px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 14px 0;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
+    .mark {
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      background: var(--ink);
+      color: white;
+      font-size: 12px;
+      font-weight: 800;
+    }
+    .brand strong { display: block; line-height: 1.15; }
+    .brand span { display: block; color: var(--muted); font-size: 12px; }
+    .status {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .pill {
+      padding: 6px 9px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .pill.strong { color: var(--accent); background: var(--soft-green); border-color: rgba(23,111,81,.2); }
+    main {
+      width: min(1360px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 22px 0 40px;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) 360px;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .panel {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+    .summary { padding: 28px; }
+    .kicker {
+      margin: 0 0 10px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    h1 {
+      margin: 0;
+      max-width: 900px;
+      font-size: clamp(30px, 4.6vw, 58px);
+      line-height: 1.04;
+      letter-spacing: 0;
+    }
+    .lede {
+      margin: 14px 0 0;
+      max-width: 820px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+    .snapshot {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 22px;
+    }
+    .mini {
+      min-height: 92px;
+      padding: 13px;
+      border: 1px solid var(--line);
+      background: #fbfcf9;
+    }
+    .mini label { color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: .06em; }
+    .mini b { display: block; margin-top: 6px; font-size: 20px; line-height: 1.1; }
+    .mini span { display: block; margin-top: 5px; color: var(--muted); font-size: 12px; }
+    .action-rail { padding: 22px; display: grid; gap: 14px; }
+    .action-rail h2, .section h2 {
+      margin: 0;
+      font-size: 15px;
+      letter-spacing: .02em;
+      text-transform: uppercase;
+    }
+    .action-card {
+      padding: 14px;
+      border-left: 3px solid var(--accent);
+      background: var(--soft-green);
+    }
+    .action-card b { display: block; font-size: 17px; line-height: 1.22; }
+    .action-card p { margin: 8px 0 0; color: var(--muted); font-size: 13px; }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1.08fr 0.92fr;
+      gap: 16px;
+      align-items: start;
+    }
+    .section { padding: 18px; }
+    .stack { display: grid; gap: 10px; margin-top: 14px; }
+    .signal {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 11px;
+      padding: 13px;
+      border: 1px solid var(--line);
+      background: #fbfcf9;
+    }
+    .dot {
+      width: 10px;
+      height: 10px;
+      margin-top: 5px;
+      background: var(--accent);
+    }
+    .dot.blue { background: var(--blue); }
+    .dot.amber { background: var(--amber); }
+    .signal h3 { margin: 0; font-size: 14px; line-height: 1.25; }
+    .signal p { margin: 5px 0 0; color: var(--muted); font-size: 12px; }
+    .meta { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+    .meta span { padding: 3px 7px; border: 1px solid var(--line); color: var(--muted); font-size: 11px; background: var(--panel); }
+    .decision-map {
+      display: grid;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .cell {
+      padding: 14px;
+      border: 1px solid var(--line);
+      background: #fbfcf9;
+      min-height: 92px;
+    }
+    .cell label { display: block; color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: .06em; }
+    .cell b { display: block; margin-top: 6px; font-size: 15px; }
+    .cell p { margin: 6px 0 0; color: var(--muted); font-size: 12px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 14px; font-size: 12px; }
+    th, td { padding: 10px 8px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    th { color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: .06em; }
+    .score {
+      display: inline-flex;
+      min-width: 32px;
+      justify-content: center;
+      padding: 4px 7px;
+      background: var(--soft-blue);
+      color: var(--blue);
+      font-weight: 760;
+    }
+    .evidence {
+      margin-top: 16px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      background: var(--panel-2);
+      color: var(--muted);
+      font-size: 13px;
+    }
+    @media (max-width: 980px) {
+      .hero, .grid { grid-template-columns: 1fr; }
+      .snapshot { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 620px) {
+      .topbar-inner { align-items: flex-start; flex-direction: column; }
+      .summary { padding: 20px; }
+      .row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="mark">GB</div>
+        <div>
+          <strong>Growth Board / Signal Board</strong>
+          <span>Anonymized market-theme example</span>
+        </div>
+      </div>
+      <div class="status">
+        <span class="pill strong">Recommended board: Signal</span>
+        <span class="pill">Confidence: medium-high</span>
+        <span class="pill">Mode: decision surface</span>
+      </div>
+    </div>
+  </div>
+  <main>
+    <section class="hero">
+      <div class="panel summary">
+        <p class="kicker">Signal-to-decision map</p>
+        <h1>AI operations is shifting from tool adoption to workflow ownership.</h1>
+        <p class="lede">The signals do not support a generic SaaS build yet. They support a narrower wedge: implementation templates, workflow audits, and operational data readiness for mid-market teams.</p>
+        <div class="snapshot">
+          <div class="mini"><label>Decision</label><b>Enter via services</b><span>Productize after 3 repeatable workflows.</span></div>
+          <div class="mini"><label>Strongest signal</label><b>Hiring shift</b><span>Ops + AI roles appear together.</span></div>
+          <div class="mini"><label>Falsifier</label><b>No paid audit pull</b><span>If 10 interviews produce no budget owner, pause.</span></div>
+        </div>
+      </div>
+      <aside class="panel action-rail">
+        <h2>Next Action</h2>
+        <div class="action-card">
+          <b>Run 10 workflow-readiness interviews before building software.</b>
+          <p>Target operations leaders in regulated or process-heavy teams. Validate data access, owner, urgency, and budget.</p>
+        </div>
+        <div class="mini"><label>Owner</label><b>Founder / operator</b><span>Complete within 7 days.</span></div>
+        <div class="mini"><label>Decision threshold</label><b>3 paid pilots</b><span>Move to product prototype only if pilots repeat the same workflow.</span></div>
+      </aside>
+    </section>
+
+    <section class="grid">
+      <div class="panel section">
+        <h2>Signal Inbox</h2>
+        <div class="stack">
+          <article class="signal">
+            <i class="dot"></i>
+            <div>
+              <h3>Company A created an AI operations lead role.</h3>
+              <p>Signal suggests ownership is moving from experimentation to workflow accountability.</p>
+              <div class="meta"><span>Source: careers page</span><span>Strength: high</span></div>
+            </div>
+          </article>
+          <article class="signal">
+            <i class="dot blue"></i>
+            <div>
+              <h3>Company B published a governance checklist.</h3>
+              <p>Governance is becoming a buying blocker, not only a compliance afterthought.</p>
+              <div class="meta"><span>Source: public blog</span><span>Strength: medium</span></div>
+            </div>
+          </article>
+          <article class="signal">
+            <i class="dot amber"></i>
+            <div>
+              <h3>Company C paused a chatbot rollout.</h3>
+              <p>Adoption risk is linked to workflow integration and trust, not model capability alone.</p>
+              <div class="meta"><span>Source: interview note</span><span>Strength: medium</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="panel section">
+        <h2>Decision Map</h2>
+        <div class="decision-map">
+          <div class="row">
+            <div class="cell"><label>Interpretation</label><b>Demand exists, but product category is not stable.</b><p>Buyers are still discovering workflow boundaries and risk owners.</p></div>
+            <div class="cell"><label>Decision Impact</label><b>Do not start with a broad platform.</b><p>Start with one workflow and one accountable buyer.</p></div>
+          </div>
+          <div class="row">
+            <div class="cell"><label>Best wedge</label><b>AI workflow readiness audit.</b><p>Fast to deliver, validates pain, reveals data constraints.</p></div>
+            <div class="cell"><label>Risk</label><b>Consulting trap.</b><p>Mitigate by extracting repeatable templates from every pilot.</p></div>
+          </div>
+        </div>
+        <div class="evidence">Unknowns: actual budget size, buyer authority, implementation cycle length, and whether repeated workflows cluster around the same operational object.</div>
+      </div>
+
+      <div class="panel section">
+        <h2>Priority Score</h2>
+        <table>
+          <thead><tr><th>Option</th><th>Fit</th><th>Timing</th><th>Action</th></tr></thead>
+          <tbody>
+            <tr><td>Workflow audit</td><td><span class="score">88</span></td><td>Now</td><td>Offer pilot</td></tr>
+            <tr><td>Template library</td><td><span class="score">73</span></td><td>After pilots</td><td>Extract patterns</td></tr>
+            <tr><td>Full SaaS platform</td><td><span class="score">46</span></td><td>Too early</td><td>Defer</td></tr>
+          </tbody>
+        </table>
+        <div class="evidence">Falsifier: if interviews show no workflow owner or no paid urgency, reclassify the theme as watch-only.</div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
+

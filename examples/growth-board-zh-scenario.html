@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Growth Board Example - Scenario Board</title>
+  <style>
+    :root {
+      --bg: #f4f5f1;
+      --panel: #ffffff;
+      --panel-2: #edf1ec;
+      --ink: #121714;
+      --muted: #66716c;
+      --line: #d8ddd4;
+      --accent: #1b7455;
+      --blue: #285d8e;
+      --amber: #9b681f;
+      --red: #9c3636;
+      --green-soft: #e0f0e8;
+      --blue-soft: #e3edf6;
+      --amber-soft: #f2e5ce;
+      --shadow: 0 18px 50px rgba(18, 23, 20, 0.08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Microsoft YaHei", "PingFang SC", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.56;
+      letter-spacing: 0;
+    }
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid var(--line);
+      background: rgba(244,245,241,.92);
+      backdrop-filter: blur(16px);
+    }
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      width: min(1360px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 14px 0;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .mark { display: grid; place-items: center; width: 34px; height: 34px; background: var(--ink); color: white; font-weight: 800; font-size: 12px; }
+    .brand strong { display: block; line-height: 1.15; }
+    .brand span { display: block; color: var(--muted); font-size: 12px; }
+    .chips { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; color: var(--muted); font-size: 12px; }
+    .chip { padding: 6px 9px; border: 1px solid var(--line); background: var(--panel); white-space: nowrap; }
+    .chip.active { color: var(--accent); background: var(--green-soft); border-color: rgba(27,116,85,.24); }
+    main {
+      width: min(1360px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 22px 0 40px;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) 380px;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .panel { border: 1px solid var(--line); background: var(--panel); box-shadow: var(--shadow); }
+    .summary { padding: 28px; }
+    .kicker { margin: 0 0 10px; color: var(--accent); font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; }
+    h1 { margin: 0; max-width: 860px; font-size: clamp(30px, 4.8vw, 56px); line-height: 1.08; letter-spacing: 0; }
+    .lede { margin: 14px 0 0; max-width: 820px; color: var(--muted); font-size: 15px; }
+    .scenario-tabs {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 10px;
+      margin-top: 22px;
+    }
+    .scenario-tab { padding: 14px; border: 1px solid var(--line); background: #fbfcf9; min-height: 96px; }
+    .scenario-tab label { color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: .06em; }
+    .scenario-tab b { display: block; margin-top: 6px; font-size: 17px; line-height: 1.2; }
+    .scenario-tab.active { background: var(--green-soft); border-color: rgba(27,116,85,.28); }
+    .rail { display: grid; gap: 12px; padding: 22px; }
+    h2 { margin: 0; font-size: 15px; text-transform: uppercase; letter-spacing: .04em; }
+    .next { padding: 15px; border-left: 3px solid var(--accent); background: var(--green-soft); }
+    .next b { display: block; font-size: 18px; line-height: 1.25; }
+    .next p { margin: 8px 0 0; color: var(--muted); font-size: 13px; }
+    .grid {
+      display: grid;
+      grid-template-columns: .95fr 1.05fr 1fr;
+      gap: 16px;
+      align-items: start;
+    }
+    .section { padding: 18px; }
+    .stack { display: grid; gap: 10px; margin-top: 14px; }
+    .card { padding: 14px; border: 1px solid var(--line); background: #fbfcf9; }
+    .card h3 { margin: 0; font-size: 15px; line-height: 1.3; }
+    .card p { margin: 7px 0 0; color: var(--muted); font-size: 13px; }
+    .state { display: inline-flex; padding: 4px 7px; margin-top: 9px; border: 1px solid var(--line); color: var(--muted); background: var(--panel); font-size: 12px; }
+    .state.good { color: var(--accent); background: var(--green-soft); border-color: rgba(27,116,85,.24); }
+    .state.warn { color: var(--amber); background: var(--amber-soft); border-color: rgba(155,104,31,.24); }
+    table { width: 100%; border-collapse: collapse; margin-top: 14px; font-size: 13px; }
+    th, td { padding: 11px 8px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    th { color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: .06em; }
+    .delta { font-weight: 800; color: var(--accent); }
+    .risk { color: var(--red); font-weight: 760; }
+    .bar { height: 9px; border: 1px solid var(--line); background: var(--panel-2); margin-top: 8px; }
+    .bar i { display: block; height: 100%; background: var(--accent); }
+    .bar .blue { background: var(--blue); }
+    .bar .amber { background: var(--amber); }
+    @media (max-width: 1040px) {
+      .hero, .grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 620px) {
+      .topbar-inner { flex-direction: column; align-items: flex-start; }
+      .chips { justify-content: flex-start; }
+      .summary { padding: 20px; }
+      .scenario-tabs { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="mark">GB</div>
+        <div>
+          <strong>Growth Board / Scenario Board</strong>
+          <span>匿名传统企业 AI 现代化示例</span>
+        </div>
+      </div>
+      <div class="chips">
+        <span class="chip active">推荐: Scenario Board</span>
+        <span class="chip">对象: 传统业务</span>
+        <span class="chip">目标: 降低运营瓶颈</span>
+      </div>
+    </div>
+  </div>
+  <main>
+    <section class="hero">
+      <div class="panel summary">
+        <p class="kicker">Scenario decision surface</p>
+        <h1>不要一开始做 AI agent，先把报价和回款流程做成可操作系统。</h1>
+        <p class="lede">输入信息显示，真正瓶颈不是模型能力，而是订单、报价、发票、回款状态没有统一对象。先做流程可视化，再做半自动化，最后再考虑 agent。</p>
+        <div class="scenario-tabs">
+          <div class="scenario-tab"><label>Scenario A</label><b>只做聊天机器人</b></div>
+          <div class="scenario-tab active"><label>Scenario B</label><b>流程对象化 + AI辅助</b></div>
+          <div class="scenario-tab"><label>Scenario C</label><b>完整 agent 化</b></div>
+        </div>
+      </div>
+      <aside class="panel rail">
+        <h2>Recommended Move</h2>
+        <div class="next">
+          <b>选择 Scenario B：先建立订单/报价/回款对象，再做 AI 辅助。</b>
+          <p>这是风险最低、学习最快、对现金和交付最有帮助的路径。</p>
+        </div>
+        <div class="card">
+          <h3>判断阈值</h3>
+          <p>如果 30 天内无法把 80% 的订单状态录入同一张表，暂缓任何 agent 项目。</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="grid">
+      <div class="panel section">
+        <h2>Current State</h2>
+        <div class="stack">
+          <div class="card">
+            <h3>订单状态分散</h3>
+            <p>销售、现场、财务各自维护信息，导致交付和回款延迟。</p>
+            <span class="state warn">State: fragmented</span>
+          </div>
+          <div class="card">
+            <h3>报价依赖老员工</h3>
+            <p>经验没有结构化，新人无法稳定复现报价判断。</p>
+            <span class="state warn">State: owner-dependent</span>
+          </div>
+          <div class="card">
+            <h3>AI 使用场景明确</h3>
+            <p>适合从报价草稿、客户历史摘要、回款提醒开始。</p>
+            <span class="state good">State: AI-ready after cleanup</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel section">
+        <h2>Scenario Comparison</h2>
+        <table>
+          <thead><tr><th>方案</th><th>现金影响</th><th>风险</th><th>结论</th></tr></thead>
+          <tbody>
+            <tr><td>A 聊天机器人</td><td>低</td><td class="risk">高</td><td>看起来快，但不解决核心流程。</td></tr>
+            <tr><td>B 对象化 + AI辅助</td><td><span class="delta">中高</span></td><td>中</td><td>推荐。先把业务变成可操作对象。</td></tr>
+            <tr><td>C 完整 agent</td><td>不确定</td><td class="risk">很高</td><td>数据和权限未准备好，过早。</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="panel section">
+        <h2>Action Path</h2>
+        <div class="stack">
+          <div class="card">
+            <h3>第1步：对象定义</h3>
+            <p>Customer / Quote / Order / Invoice / Payment / Issue。</p>
+            <div class="bar"><i style="width:72%"></i></div>
+          </div>
+          <div class="card">
+            <h3>第2步：状态看板</h3>
+            <p>把 delayed、blocked、ready-to-invoice、payment-risk 做成状态。</p>
+            <div class="bar"><i class="blue" style="width:58%"></i></div>
+          </div>
+          <div class="card">
+            <h3>第3步：AI辅助</h3>
+            <p>只在数据稳定后，让 AI 写报价草稿、总结客户历史、提醒异常。</p>
+            <div class="bar"><i class="amber" style="width:41%"></i></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
+

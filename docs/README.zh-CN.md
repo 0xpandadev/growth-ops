@@ -149,6 +149,15 @@ Growth Ops 会自动判断适合哪种 board：
 
 视觉方向不是普通 SaaS dashboard，而是参考 Palantir 的 object/state/action、CB Insights 的 signal stack、6sense/Clay 的 account scoring、Neo4j 的 entity graph、Runway/Pigment 的 scenario planning、incident.io/PagerDuty 的 action workflow，以及 Tufte/Few 的信息密度和清晰度，做成更像高级业务操作台的界面。
 
+### Growth Board 示例
+
+Clone 仓库之后，可以直接用浏览器打开这些 HTML 文件。也可以用 GitHub Pages 或任意静态服务器展示。
+
+- [Examples index](../examples/index.html)
+- [English Signal Board](../examples/growth-board-en-signal.html): 把市场/主题信号转成判断和行动
+- [Japanese Score Board](../examples/growth-board-ja-score.html): 匿名销售/合作伙伴评分
+- [Chinese Scenario Board](../examples/growth-board-zh-scenario.html): 中小企业 AI 现代化情景比较
+
 ## 如何使用
 
 在 Codex 中可以这样调用：

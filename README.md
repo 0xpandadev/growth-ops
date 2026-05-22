@@ -113,6 +113,15 @@ Growth Ops will infer the right board:
 
 The visual grammar borrows from Palantir-style object/state/action thinking, CB Insights-style signal stacks, 6sense/Clay-style account scoring, Neo4j-style entity graphs, Runway/Pigment-style scenarios, incident.io/PagerDuty-style action workflows, and Tufte/Few-style information clarity. It should feel like a high-end operating console, not another empty SaaS dashboard.
 
+### Growth Board Examples
+
+Open the example HTML files locally after cloning, or serve the repository with GitHub Pages / any static server:
+
+- [Examples index](./examples/index.html)
+- [English Signal Board](./examples/growth-board-en-signal.html): market/theme signals into decision and action.
+- [Japanese Score Board](./examples/growth-board-ja-score.html): anonymized account/partner scoring.
+- [Chinese Scenario Board](./examples/growth-board-zh-scenario.html): small-business AI modernization scenarios.
+
 ## What You Can Ask It To Do
 
 ### 1. Market Radar

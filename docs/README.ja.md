@@ -155,6 +155,15 @@ signal -> interpretation -> decision -> action
 
 見た目は、普通のSaaSダッシュボードではなく、Palantir的な object/state/action、CB Insights的な signal stack、6sense/Clay的なスコアリング、Neo4j的な関係グラフ、Runway/Pigment的なシナリオ、incident.io/PagerDuty的なアクション管理、Tufte/Few的な情報密度を参考にした、クールで高密度な事業操作画面を目指します。
 
+### Growth Board サンプル
+
+リポジトリを clone したあと、HTMLファイルをそのままブラウザで開けます。GitHub Pages や静的サーバーで配信しても使えます。
+
+- [Examples index](../examples/index.html)
+- [English Signal Board](../examples/growth-board-en-signal.html): 市場テーマのシグナルを判断とアクションへ変換
+- [Japanese Score Board](../examples/growth-board-ja-score.html): 匿名の営業先/提携先スコアリング
+- [Chinese Scenario Board](../examples/growth-board-zh-scenario.html): 中小企業AI近代化のシナリオ比較
+
 ## 使い方
 
 Codex では、こう呼び出します。
