@@ -64,6 +64,18 @@ For slides, dashboards, charts, icons, and diagrams:
 - Is the structure easier to understand than prose?
 - Remove decorative-only visuals.
 
+## Growth Board Gate
+
+For GUI, dashboard, board, command surface, and HTML screen outputs:
+
+- Did we infer the decision before choosing the board?
+- Did we avoid asking the user to memorize board types?
+- Does the board show Signal -> Interpretation -> Decision -> Action?
+- Does every panel change what the user can understand or do?
+- Are sources, confidence, unknowns, and falsifiers visible?
+- Is the visual style high-density, calm, and operational rather than generic KPI-card BI?
+- Is there a next action, owner/condition, or follow-up question?
+
 ## Method Substance Gate
 
 - Did each named source family change the output?

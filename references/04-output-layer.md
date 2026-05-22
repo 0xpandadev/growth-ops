@@ -14,6 +14,7 @@ The output layer makes work usable.
 | Ops ontology | turning messy operations into AI-ready workflow | `templates/ops-ontology.md` |
 | Content asset plan | article, X, newsletter, deck, source pack | `templates/content-asset-plan.md` |
 | Skill blueprint | repeatable work to skill design | `templates/skill-blueprint.md` |
+| Growth Board | GUI / board / command surface for decision-ready visual operation | `templates/growth-board-spec.md`, `templates/growth-board-html-brief.md` |
 
 ## Deck And HTML Handoff
 
@@ -50,6 +51,14 @@ When the user asks for an HTML dashboard, specify:
 - export or sharing need
 
 For detailed screen logic, load `references/assets/dashboard-and-information-design.md`.
+
+For Growth Board or Command Surface requests, load `references/assets/growth-board.md`.
+
+Default rule:
+
+- If the user explicitly asks for GUI, board, dashboard, command surface, screen, or visual console, produce a Growth Board spec or HTML brief.
+- If the user only asks for analysis, produce text first and optionally recommend a Growth Board when it would clarify the decision.
+- If the user provides messy data and asks for GUI without a clear purpose, use Auto Board to discover the decision candidates.
 
 ## Article / Content Handoff
 

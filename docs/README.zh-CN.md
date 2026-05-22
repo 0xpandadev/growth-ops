@@ -120,6 +120,35 @@ Operator 会把抽象战略翻译成经营现实：
 
 Growth Ops 不希望分析停留在聊天窗口里。它更关心：这份分析能不能被拿去使用、展示、销售、管理或继续迭代。
 
+## Growth Board: 面向业务判断的 GUI
+
+Growth Ops 也可以把分析结果变成 **Growth Board**，也就是一个面向决策的 GUI / knowledge UI。
+
+它不是普通 KPI dashboard。它要展示的是信息如何变成判断：
+
+```text
+signal -> interpretation -> decision -> action
+```
+
+用户不需要记住具体界面名称。只要这样说：
+
+```text
+[$growth-ops]
+把这些信息变成 Growth Board。
+<笔记、公司列表、市场主题、杂乱数据、业务流程>
+```
+
+Growth Ops 会自动判断适合哪种 board：
+
+- **Auto Board**: 目标还不清楚的杂乱输入
+- **Signal Board**: 市场主题、弱信号、新闻、公司动态
+- **Score Board**: 线索、客户、合作伙伴、投资/收购对象、想法排序
+- **Map Board**: 公司、客户、产品、流程、人物、资金、资料之间的关系
+- **Scenario Board**: 定价、AI 导入、业务再生、招聘、现金流等假设模拟
+- **Action Board**: 谁在什么时候、什么条件下、做什么动作
+
+视觉方向不是普通 SaaS dashboard，而是参考 Palantir 的 object/state/action、CB Insights 的 signal stack、6sense/Clay 的 account scoring、Neo4j 的 entity graph、Runway/Pigment 的 scenario planning、incident.io/PagerDuty 的 action workflow，以及 Tufte/Few 的信息密度和清晰度，做成更像高级业务操作台的界面。
+
 ## 如何使用
 
 在 Codex 中可以这样调用：
@@ -216,4 +245,3 @@ Growth Ops 不会假装自己拥有 CB Insights、PitchBook、Dealroom、6sense�
 ```
 
 Growth Ops 就是为了把这条链路变成一个可调用的 Skill。
-

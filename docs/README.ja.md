@@ -126,6 +126,35 @@ Assets は、分析結果を人に見せたり、実務で使ったりできる�
 
 Growth Ops は、チャット内で終わる分析ではなく、外に持ち出せる成果物を作ることを重視します。
 
+## Growth Board: 事業判断のためのGUI
+
+Growth Ops は、分析結果を **Growth Board** というGUI / knowledge UI に変換できます。
+
+これは普通のKPIダッシュボードではありません。情報がどう判断に変わるかを見せる画面です。
+
+```text
+signal -> interpretation -> decision -> action
+```
+
+ユーザーが細かい画面名を覚える必要はありません。
+
+```text
+[$growth-ops]
+この情報をGrowth Board化して。
+<メモ、会社リスト、市場テーマ、雑データ、業務フロー>
+```
+
+と言えば、Growth Ops が内部で向いている画面を選びます。
+
+- **Auto Board**: 目的が曖昧な雑データをまず整理する
+- **Signal Board**: 市場テーマ、弱いシグナル、ニュース、会社の動きを見る
+- **Score Board**: 営業先、提携先、投資候補、買収候補、アイデアを順位付けする
+- **Map Board**: 会社、顧客、商品、業務、人物、資金、資料の関係を見る
+- **Scenario Board**: 価格変更、AI導入、再生、採用、資金繰りなどの仮説を見る
+- **Action Board**: 誰が、何を、いつ、どの条件で動くかに落とす
+
+見た目は、普通のSaaSダッシュボードではなく、Palantir的な object/state/action、CB Insights的な signal stack、6sense/Clay的なスコアリング、Neo4j的な関係グラフ、Runway/Pigment的なシナリオ、incident.io/PagerDuty的なアクション管理、Tufte/Few的な情報密度を参考にした、クールで高密度な事業操作画面を目指します。
+
 ## 使い方
 
 Codex では、こう呼び出します。
@@ -224,4 +253,3 @@ Growth Ops は、CB Insights、PitchBook、Dealroom、6sense、Clay、SignalFire
 ```
 
 Growth Ops は、この流れを一つの Skill として扱うためのものです。
-

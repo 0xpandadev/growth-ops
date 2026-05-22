@@ -86,6 +86,33 @@ Use Assets when you need to turn analysis into something other people can read, 
 
 Assets is where Growth Ops becomes useful outside the chat window. It packages thinking into practical business artifacts.
 
+## Growth Board: GUI For Business Judgment
+
+Growth Ops can also turn analysis into a **Growth Board**: a decision-oriented GUI / knowledge UI. This is not a generic KPI dashboard. It is a visual surface that shows how information becomes judgment.
+
+```text
+signal -> interpretation -> decision -> action
+```
+
+You do not need to choose a board type. Ask naturally:
+
+```text
+[$growth-ops]
+Turn this into a Growth Board.
+<notes, company list, market theme, messy data, or workflow>
+```
+
+Growth Ops will infer the right board:
+
+- **Auto Board**: messy input with unclear objective.
+- **Signal Board**: market themes, weak signals, news, company movement.
+- **Score Board**: accounts, leads, partners, investors, targets, ideas.
+- **Map Board**: entities, relationships, workflows, operations.
+- **Scenario Board**: pricing, AI adoption, turnaround, investment, hiring, cash.
+- **Action Board**: execution, follow-up, operating cadence.
+
+The visual grammar borrows from Palantir-style object/state/action thinking, CB Insights-style signal stacks, 6sense/Clay-style account scoring, Neo4j-style entity graphs, Runway/Pigment-style scenarios, incident.io/PagerDuty-style action workflows, and Tufte/Few-style information clarity. It should feel like a high-end operating console, not another empty SaaS dashboard.
+
 ## What You Can Ask It To Do
 
 ### 1. Market Radar
@@ -310,4 +337,3 @@ messy information -> structured judgment -> practical next action -> usable busi
 ```
 
 If you are exploring a market, evaluating a company, trying to revive an old business, designing an AI workflow, preparing a proposal, or turning research into assets, Growth Ops gives you a sharper operating surface.
-

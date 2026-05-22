@@ -82,6 +82,7 @@ Assets references:
 - `references/assets/content-assets.md`: note, X, newsletters, thought leadership, source lists.
 - `references/assets/deck-and-brief.md`: deck briefs and handoff to `smart-decks`.
 - `references/assets/dashboard-and-information-design.md`: decision dashboards and information design for usable screens.
+- `references/assets/growth-board.md`: Growth Board knowledge UI, board selection, and Command Surface visual grammar.
 - `references/assets/proposal-builder.md`: proposals, client briefs, account-specific offers.
 - `references/assets/skill-blueprint.md`: turning repeated work into a new skill.
 
@@ -95,6 +96,8 @@ Templates:
 - `templates/ops-ontology.md`
 - `templates/content-asset-plan.md`
 - `templates/skill-blueprint.md`
+- `templates/growth-board-spec.md`
+- `templates/growth-board-html-brief.md`
 
 ## Output Rules
 
@@ -134,6 +137,7 @@ When the user provides URLs, PDFs, notes, CSVs, or local files, read the provide
 - Do not produce "AI can do everything" answers. Tie AI to workflow, data, governance, ROI, and adoption.
 - Do not recommend legal, tax, investment, or insolvency actions as professional advice. Provide decision support and suggest qualified professionals where appropriate.
 - Do not make decorative dashboards or decks. Every chart, icon, table, or visual element must encode meaning.
+- When the user asks for GUI, dashboard, board, console, screen, visual surface, or Command Surface, infer the decision and compose a Growth Board. Do not force the user to choose a board type unless they explicitly ask for options.
 - Do not make users choose modes unless they ask. Auto-route.
 
 ## Handoff To Other Skills

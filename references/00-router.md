@@ -21,7 +21,10 @@ Use this file first when the request is broad or ambiguous.
 - "倒産しそうな会社をどう再生するか" -> load `operator/turnaround-cash-control.md`, `operator/finance-and-unit-economics.md`.
 - "これをnote記事とスライドにして" -> load `assets/content-assets.md`, `assets/deck-and-brief.md`.
 - "AIエージェント/スキルで業務化したい" -> load `operator/ai-agent-ops.md`, `assets/skill-blueprint.md`.
-- "HTMLダッシュボードにしたい" -> load `assets/dashboard-and-information-design.md`.
+- "HTMLダッシュボードにしたい" -> load `assets/growth-board.md`, `assets/dashboard-and-information-design.md`.
+- "GUI / dashboard / board / Command Surface / 見える画面にしたい" -> load `assets/growth-board.md`, `assets/dashboard-and-information-design.md`.
+- "どんなGUIが合うか提案して" -> load `assets/growth-board.md` and recommend 1 primary board plus 1-2 alternatives.
+- "雑データをGUIで見せて" -> load `input-understanding.md`, `assets/growth-board.md`; default to Auto Board.
 - "この作業をスキル化したい" -> load `assets/skill-blueprint.md`.
 
 ## Do Not Make Users Memorize Modes
