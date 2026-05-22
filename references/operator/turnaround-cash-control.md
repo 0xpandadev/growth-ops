@@ -10,6 +10,7 @@ This is decision support, not legal, tax, insolvency, or financial advice. Sugge
 - 中小企業庁 再生支援: https://www.chusho.meti.go.jp/keiei/saisei/02.html
 - McKinsey transformation office: https://www.mckinsey.com/capabilities/rts/our-insights/the-role-of-the-transformation-office
 - Deloitte turnaround and value creation: https://www.deloitte.com/global/en/services/financial-advisory/services/turnaround-value-creation.html
+- PE value creation companion: `pe-value-creation.md`
 
 ## First Principle
 
@@ -66,6 +67,18 @@ Use transformation-office logic for execution:
 - finance validates the value logic
 - blockers are escalated quickly
 - progress is tracked through stages from idea to realized impact
+
+## When To Combine With PE Value Creation
+
+Load `pe-value-creation.md` when the user needs more than survival:
+
+- acquisition or succession improvement plan
+- post-takeover 100-day plan
+- operational value creation
+- revenue/margin expansion after stabilization
+- initiative portfolio with owner, KPI, impact, confidence, and deadline
+
+Do not use PE-style growth levers before cash survival, creditor reality, and must-pay obligations are understood.
 
 ## Output
 

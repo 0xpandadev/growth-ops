@@ -49,6 +49,7 @@ Core navigation:
 - `references/input-understanding.md`: turn messy user input into a decision-grade work order.
 - `references/01-discovery-layer.md`: how to gather and structure evidence; includes Exa-style semantic discovery.
 - `references/02-lens-layer.md`: method libraries from VC, consulting, analyst, finance, China scale ops, SME turnaround, and AI operations.
+- `references/classic-strategy-management.md`: MBA and modern management methods translated into decision fields.
 - `references/method-source-map.md`: make external methodologies operational instead of name-only.
 - `references/03-analysis-layer.md`: scoring, synthesis, prioritization, and decision logic.
 - `references/04-output-layer.md`: output families and when to use them.
@@ -72,6 +73,7 @@ Operator references:
 - `references/operator/sme-operator.md`: small-business operating diagnosis.
 - `references/operator/succession-and-sme-ma.md`: succession, search fund, and SME M&A.
 - `references/operator/turnaround-cash-control.md`: distressed business and 13-week cash discipline.
+- `references/operator/pe-value-creation.md`: PE-style value creation, portfolio operations, and 100-day plans.
 - `references/operator/finance-and-unit-economics.md`: margin, unit economics, valuation, and finance logic.
 - `references/operator/ops-ontology.md`: Palantir-style business objects, states, actions, permissions, and workflows.
 - `references/operator/legacy-company-modernization.md`: old-company modernization, AI adoption, process standardization.
@@ -93,6 +95,7 @@ Templates:
 - `templates/market-radar.md`
 - `templates/sme-operator-memo.md`
 - `templates/turnaround-plan.md`
+- `templates/value-creation-plan.md`
 - `templates/ops-ontology.md`
 - `templates/content-asset-plan.md`
 - `templates/skill-blueprint.md`

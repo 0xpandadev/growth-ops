@@ -50,6 +50,12 @@ Most AI workflows stop too early. They summarize an article, list some trends, o
 
 Growth Ops is intentionally practical. It is not a "strategy theater" skill. It should produce something you can use: a ranked list, a decision memo, a scorecard, a 90-day plan, a dashboard spec, a deck brief, a proposal angle, or a repeatable workflow.
 
+## Method Library: Names Become Operating Fields
+
+Growth Ops includes a method library that turns classic strategy and PE-style value creation into practical output fields. Porter Five Forces does not sit alone as a random MBA artifact; it is used alongside PESTEL, value chain, VRIO, BCG/GE-McKinsey portfolio logic, McKinsey 7S, Balanced Scorecard, customer journey, scenario planning, and change-management methods.
+
+For acquisition, succession, turnaround, and business improvement cases, Growth Ops also uses public patterns from PE value-creation teams such as KKR Capstone, Vista, Thoma Bravo, CD&R, EQT Motherbrain, Apollo APPS, and Bain PE. These are not copied as proprietary playbooks. They are translated into practical fields: baseline, lever, owner, KPI, expected impact, confidence, deadline, governance cadence, and first 100-day actions.
+
 ## The Three Internal Lanes
 
 You do not need to remember modes. Ask naturally, and the skill routes internally.

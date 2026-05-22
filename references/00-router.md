@@ -10,6 +10,8 @@ Use this file first when the request is broad or ambiguous.
 | Judge a business situation, cash pressure, operations, succession, modernization, AI workflow | `operator` | Operating memo, turnaround plan, ops ontology, 90-day plan |
 | Turn analysis into article, deck, proposal, dashboard, reusable workflow, skill | `assets` | Content plan, deck brief, proposal, HTML dashboard spec, skill blueprint |
 | Research + decide + package | `radar + operator + assets` | Decision-ready business asset |
+| Analyze industry structure, portfolio allocation, org alignment, execution KPIs, customer journey, or uncertainty | `radar + operator` | Strategy diagnosis, portfolio action, scorecard, scenario plan |
+| Improve, acquire, inherit, or turn around a business using PE-style value creation | `operator + assets` | Value creation plan, 100-day plan, initiative tracker |
 
 ## Auto-Routing Examples
 
@@ -26,6 +28,8 @@ Use this file first when the request is broad or ambiguous.
 - "どんなGUIが合うか提案して" -> load `assets/growth-board.md` and recommend 1 primary board plus 1-2 alternatives.
 - "雑データをGUIで見せて" -> load `input-understanding.md`, `assets/growth-board.md`; default to Auto Board.
 - "この作業をスキル化したい" -> load `assets/skill-blueprint.md`.
+- "Porter / MBAフレーム / 戦略ツール / ポートフォリオ / Balanced Scorecard / シナリオで見て" -> load `classic-strategy-management.md` and `method-source-map.md`.
+- "PE風のバリューアップ / 買収後100日 / 承継後の価値創造 / この会社を良くする" -> load `operator/pe-value-creation.md`, plus `operator/finance-and-unit-economics.md` or `operator/turnaround-cash-control.md` when cash or distress matters.
 
 ## Do Not Make Users Memorize Modes
 

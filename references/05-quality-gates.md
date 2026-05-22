@@ -81,3 +81,6 @@ For GUI, dashboard, board, command surface, and HTML screen outputs:
 - Did each named source family change the output?
 - Did it create a diagnostic question, output field, metric, or falsifier?
 - Is any external method present only as a name? If yes, remove it or operationalize it.
+- If using classic strategy, did it connect to profit pool, resource allocation, org alignment, customer journey, or execution KPI?
+- If using PE value creation, did it include baseline, lever, owner, KPI, impact, confidence, deadline, and governance cadence?
+- Did it avoid copying or pretending access to proprietary fund/consulting playbooks?

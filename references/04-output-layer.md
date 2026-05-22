@@ -11,6 +11,7 @@ The output layer makes work usable.
 | Account scorecard | ranking leads, partners, investors, targets | `templates/account-scorecard.md` |
 | SME operator memo | diagnosing a small business | `templates/sme-operator-memo.md` |
 | Turnaround plan | distressed business or cash crisis | `templates/turnaround-plan.md` |
+| Value creation plan | acquisition, succession, PE-style improvement, operational value creation, 100-day plan | `templates/value-creation-plan.md` |
 | Ops ontology | turning messy operations into AI-ready workflow | `templates/ops-ontology.md` |
 | Content asset plan | article, X, newsletter, deck, source pack | `templates/content-asset-plan.md` |
 | Skill blueprint | repeatable work to skill design | `templates/skill-blueprint.md` |

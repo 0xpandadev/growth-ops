@@ -8,6 +8,7 @@ Do not use every lens. Select only what changes the decision.
 
 | Lens family | Use for | Reference files |
 |---|---|---|
+| Classic strategy / management | industry structure, portfolio allocation, org alignment, execution KPIs, customer journey, uncertainty | `classic-strategy-management.md` |
 | VC / startup | PMF, why now, wedge, first customer, defensibility | `radar/vc-startup-lenses.md` |
 | Market intelligence | market maps, category momentum, competitor landscape, private-company signals | `radar/market-intelligence.md` |
 | Signal scoring systems | Mosaic, private-company health, buying stage, custom enrichment scoring | `radar/signal-and-scoring-systems.md` |
@@ -15,6 +16,7 @@ Do not use every lens. Select only what changes the decision.
 | Customer value | JTBD, value elements, willingness to pay, PLG fit | `radar/customer-value-jtbd.md` |
 | China scale ops | fast iteration, ecosystem leverage, recommendation/commerce loops, data middle platform | `radar/china-scale-signals.md` |
 | SME operator | small-company reality, old businesses, cash, operations, owner dependency | `operator/sme-operator.md` |
+| PE value creation | acquisition, succession, operational improvement, 100-day plan, portfolio operations, value levers | `operator/pe-value-creation.md` |
 | Turnaround | distressed company, cash crisis, debt pressure, survival plan | `operator/turnaround-cash-control.md` |
 | Succession / SME M&A | business succession, search fund, acquisition, inherited company | `operator/succession-and-sme-ma.md` |
 | Finance / IB | unit economics, valuation, margin bridge, sensitivity, comps | `operator/finance-and-unit-economics.md` |
@@ -37,7 +39,9 @@ Use public patterns, not claims of proprietary access.
 - 6sense / Clay: ICP fit, buying stage, intent, custom data enrichment, next action, and dynamic account score design.
 - SignalFire / Harmonic: hiring, headcount, funding, founder/team, web traction, category, and breakout-company signals.
 - Gartner / Forrester / IDC: maturity, buyer criteria, adoption barriers.
+- HBS / Bain / BCG / McKinsey: Five Forces, strategic planning, Balanced Scorecard, customer journey, scenario planning, change management, portfolio matrices, 7S.
 - McKinsey / BCG / Bain: issue trees, transformation office rhythm, roadmap, operating model.
+- KKR Capstone / Vista / Thoma Bravo / CD&R / EQT Motherbrain / Apollo APPS / Bain PE: value thesis, lever stack, 100-day plan, operating partners, AI/data-assisted sourcing and value creation.
 - Damodaran / CFI / Wall Street Prep: valuation, DCF, comps, sensitivity, finance logic.
 - Palantir: ontology, operational data objects, actions, permissions, workflow.
 - OpenAI / Anthropic / Glean: agent workflows, retrieval, tools, evals, guardrails, knowledge graph.
